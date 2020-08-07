@@ -16,9 +16,17 @@ PYPI_PACKAGE_EXT="{{pkgext}}"
 inherit pypi
 
 {%- if depends|length > 0 %}
-RDEPENDS_${PN} += " \
+DEPENDS += " \
   {%- for depend in depends %}
-    ${PYTHON_PN}-{{depend}}  \
+    ${PYTHON_PN}-{{depend}}-native \
+  {%- endfor %}
+"
+{%- endif %}
+
+{%- if rdepends|length > 0 %}
+RDEPENDS_${PN} += " \
+  {%- for rdepend in rdepends %}
+    ${PYTHON_PN}-{{rdepend}} \
   {%- endfor %}
 "
 {%- endif %}
