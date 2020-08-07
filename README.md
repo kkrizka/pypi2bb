@@ -6,16 +6,18 @@ Queries the PyPi to get get information about a specific python packages and gen
 
 ```shell
 git clone https://github.com/kkrizka/pypi2bb.git
-pip install pypi22bb
+pip install pypi2bb
 ```
 
 ## Example Usage
 
 To generate the recipe for [Dash]([https://dash.plotly.com/](https://dash.plotly.com/)), run the following command:
+
 ```shell
 pypi2bb.py dash
 ```
-This creates the following two files: 
+
+This creates the following two files: `python-dash.inc` and `python3-dash_1.14.0.bb`.
 
 ## Missing Features
 - Recursively generate recipes for dependencies 
